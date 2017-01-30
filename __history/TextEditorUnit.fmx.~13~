@@ -1,0 +1,202 @@
+object TextEditorForm: TTextEditorForm
+  Left = 0
+  Top = 0
+  Caption = 'Text Editor'
+  ClientHeight = 400
+  ClientWidth = 400
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  OnMouseUp = FormMouseUp
+  DesignerMasterStyle = 0
+  object StatusBar: TStatusBar
+    Position.Y = 384.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 400.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object LineNumber: TLabel
+      Position.X = 8.000000000000000000
+    end
+    object ColumnNumber: TLabel
+      Position.X = 136.000000000000000000
+    end
+    object LineCount: TLabel
+      Position.X = 264.000000000000000000
+    end
+  end
+  object Editor: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 400.000000000000000000
+    Size.Height = 384.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 396.000000000000000000
+    Viewport.Height = 380.000000000000000000
+  end
+  object MainMenu: TMainMenu
+    Left = 32
+    Top = 16
+    object FileMenu: TMenuItem
+      Text = 'File'
+      object NewItem: TMenuItem
+        Action = NewAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object OpenItem: TMenuItem
+        Action = OpenAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object SaveItem: TMenuItem
+        Action = SaveAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object SaveAsItem: TMenuItem
+        Action = SaveAsAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object ExitItem: TMenuItem
+        Action = ExitAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+    end
+    object EditMenu: TMenuItem
+      Text = 'Edit'
+      object CutItem: TMenuItem
+        Action = CutAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object CopyItem: TMenuItem
+        Action = CopyAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object PasteItem: TMenuItem
+        Action = PasteAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object SelectAllItem: TMenuItem
+        Action = SelectAllAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object UndoItem: TMenuItem
+        Action = UndoAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object DeleteItem: TMenuItem
+        Action = DeleteAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+    end
+    object FormatMenu: TMenuItem
+      Text = 'Format'
+      object WordWrapItem: TMenuItem
+        Action = WordWrapAction
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+    end
+  end
+  object OpenFileDialog: TOpenDialog
+    Left = 32
+    Top = 72
+  end
+  object SaveFileDialog: TSaveDialog
+    Left = 32
+    Top = 128
+  end
+  object ActionList: TActionList
+    Left = 32
+    Top = 184
+    object NewAction: TAction
+      Category = 'File'
+      Text = 'New'
+      ShortCut = 16462
+      OnExecute = NewActionExecute
+    end
+    object OpenAction: TAction
+      Category = 'File'
+      Text = 'Open...'
+      ShortCut = 16463
+      OnExecute = OpenActionExecute
+    end
+    object SaveAction: TAction
+      Category = 'File'
+      Text = 'Save'
+      ShortCut = 16467
+      OnExecute = SaveActionExecute
+    end
+    object SaveAsAction: TAction
+      Category = 'File'
+      Text = 'Save As...'
+      OnExecute = SaveAsActionExecute
+    end
+    object ExitAction: TAction
+      Category = 'File'
+      Text = 'Exit'
+      OnExecute = ExitActionExecute
+    end
+    object CutAction: TAction
+      Category = 'Edit'
+      Text = 'Cut'
+      ShortCut = 16472
+    end
+    object CopyAction: TAction
+      Category = 'Edit'
+      Text = 'Copy'
+      ShortCut = 16451
+    end
+    object PasteAction: TAction
+      Category = 'Edit'
+      Text = 'Paste'
+      ShortCut = 16470
+    end
+    object SelectAllAction: TAction
+      Category = 'Edit'
+      Text = 'Select All'
+      ShortCut = 16449
+    end
+    object UndoAction: TAction
+      Category = 'Edit'
+      Text = 'Undo'
+      ShortCut = 16474
+    end
+    object DeleteAction: TAction
+      Category = 'Edit'
+      Text = 'Delete'
+      ShortCut = 16430
+    end
+    object WordWrapAction: TAction
+      Category = 'Format'
+      Text = 'Word Wrap'
+    end
+  end
+end
